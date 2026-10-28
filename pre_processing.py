@@ -295,3 +295,13 @@ plt.axis("off")
 plt.show()
 
 #note : tilt leaves a black pixels مش عارف صح ولا المفروض اعملها حاجه
+#to be ready to load 
+np.savez_compressed(
+    "bird_data.npz",
+    X_train=X_train,
+    y_train=y_train,
+    X_test=X_test,
+    y_test=y_test
+)
+
+print("saved sucssfully")
