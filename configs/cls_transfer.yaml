@@ -1,0 +1,42 @@
+experiment: cls_transfer_resnet50
+seed: 42
+
+data:
+  cache_dir: null
+  val_fraction: 0.15
+  image_size: 224
+  batch_size: 32
+  num_workers: 2
+  aug:
+    crop_scale: [0.5, 1.0]
+    rotation: 10
+    brightness: 0.2
+    contrast: 0.2
+    saturation: 0.1
+
+model:
+  encoder:
+    name: resnet50
+    pretrained: true
+  head:
+    dropout: 0.3
+
+train:
+  epochs: 30
+  optimizer: adamw
+  lr: 0.001                #
+  weight_decay: 0.01
+  label_smoothing: 0.1
+  scheduler: cosine
+  warmup_epochs: 2
+  amp: true
+  early_stopping_patience: 8
+  freeze_backbone_epochs: 3   
+  backbone_lr_mult: 0.1       
+  checkpoint_dir: checkpoints/cls_transfer_resnet50
+  resume: false
+
+tracking:
+  backend: mlflow
+  project: pixels-to-language
+  tracking_uri: null

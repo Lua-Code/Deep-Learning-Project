@@ -1,0 +1,16 @@
+# Search spaces for grid AND random search
+# Grid trials = product of the `grid` list lengths: 3 x 2 x 2 = 12
+base_config: configs/cls_transfer.yaml
+trial_epochs: 6          
+seed: 42                 
+
+space:
+  train.lr:
+    grid: [0.0003, 0.001, 0.003]
+    random: {dist: loguniform, low: 0.0001, high: 0.01}
+  train.weight_decay:
+    grid: [0.001, 0.05]
+    random: {dist: loguniform, low: 0.0001, high: 0.1}
+  data.aug.crop_scale:             
+    grid: [[0.35, 1.0], [0.7, 1.0]]
+    random: {dist: choice, values: [[0.3, 1.0], [0.5, 1.0], [0.7, 1.0]]}
