@@ -1,0 +1,42 @@
+experiment: cls_scratch
+seed: 42
+
+data:
+  cache_dir: null          # collab drive or kaggle if anyone is using it
+  val_fraction: 0.15
+  image_size: 224
+  batch_size: 32
+  num_workers: 2
+  aug:
+    crop_scale: [0.5, 1.0]
+    rotation: 10
+    brightness: 0.2
+    contrast: 0.2
+    saturation: 0.1
+
+model:
+  encoder:
+    name: scratch_resnet   
+    pretrained: false
+  head:
+    dropout: 0.3
+
+train:
+  epochs: 80
+  optimizer: adamw
+  lr: 0.001
+  weight_decay: 0.05
+  label_smoothing: 0.1
+  scheduler: cosine
+  warmup_epochs: 5
+  amp: true
+  early_stopping_patience: 15
+  freeze_backbone_epochs: 0
+  backbone_lr_mult: 1.0
+  checkpoint_dir: checkpoints/cls_scratch
+  resume: false
+
+tracking:
+  backend: mlflow         
+  project: pixels-to-language
+  tracking_uri: null

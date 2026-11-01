@@ -1,0 +1,49 @@
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.ipynb_checkpoints/
+
+# Data and caches (downloaded or regenerated)
+data/
+.cache/
+*.npz
+
+# Model weights (share via the Google Drive link instead)
+checkpoints/
+*.pt
+*.pth
+*.ckpt
+
+# Experiment tracking
+mlruns/
+wandb/
+lightning_logs/
+runs/
+
+# Outputs (large figures and logs)
+outputs/*
+!outputs/.gitkeep
+
+# Reports: keep the source, ignore LaTeX build files
+report/*.aux
+report/*.log
+report/*.out
+report/*.toc
+report/*.synctex.gz
+
+# IDE and OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Secrets
+.env
+*.key
