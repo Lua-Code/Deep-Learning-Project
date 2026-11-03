@@ -41,16 +41,16 @@ An end-to-end multimodal deep learning system on the CUB-200-2011 bird dataset. 
 
 ## 1. Team
 
-**Team number:** <XX>
+**Team number:** 17
 
 | Member | ID |
 |---| ---|
 | Kevin David | 23P0160
-| Mahmoud Hassan | 23P0xxx
-| Jana Tamer | 23P0xxx
-| Ahmed Meligy | 23P0xxx
-| Madonna Emad | 23P0xxx
-| Jana Mohammed | 23P0xxx
+| Mahmoud Hassan | 23P0104
+| Jana Tamer | 23P0173
+| Ahmed Meligy | 23P0112
+| Madonna Emad | 23P0325
+| Jana Mohammed | 2301032
 
 
 ---
@@ -463,24 +463,24 @@ Colorization metrics are computed in RGB [0, 1] after converting the prediction 
 
 | Model | Top-1 | Top-5 | Macro F1 |
 |---|---|---|---|
-| Scratch CNN | 0.49 | 0.76 | 0.49 | 
+| Scratch CNN | 0.54 | 0.77 | 0.53 | 
 | <ResNet-50, transfer> | 0.77 | 0.94 | 0.77 | 
 
 ### 13.2 Tuning comparison (Scratch CNN)
 
 | Method | Trials | Best val accuracy | Total time |
 |---|---|---|---|
-| Grid search | <> | <> | <> |
-| Random search | <> | <> | <> |
+| Grid search | 12 | 0.694 | 28.5 |
+| Random search | 12 | 0.685 | 28.5 |
 
-### 13.3 Colorization (test set)
+### 13.3 Colorization (TBA)
 
 | Backbone | PSNR | MAE | SSIM |
 |---|---|---|---|
 | <Scratch encoder> | TBA | TBA | TBA |
 | <Pretrained encoder> | TBA | TBA | TBA |
 
-### 13.4 Captioning (test set)
+### 13.4 Captioning (TBA)
 
 | Decoder | BLEU-1 | BLEU-4 | ROUGE-L |
 |---|---|---|---|
@@ -491,7 +491,7 @@ Colorization metrics are computed in RGB [0, 1] after converting the prediction 
 
 | Task | Model | Why |
 |---|---|---|
-| Classification | <> | <> |
+| Classification | Resnet50 Transfer | Resnet50 is way better as it is already trained on millions of images and its hyperparams are well tuned |
 | Colorization | TBA | TBA |
 | Captioning | TBA | TBA |
 
@@ -499,7 +499,7 @@ Colorization metrics are computed in RGB [0, 1] after converting the prediction 
 
 ## 14. Trained models
 
-All trained checkpoints: **<Google Drive link>**
+All trained checkpoints: **https://drive.google.com/drive/folders/154goXbIDzcxHnKMLR9e9KCz1AepWgXgz?usp=sharing**
 
 | File | Task | Description |
 |---|---|---|
